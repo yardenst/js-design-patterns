@@ -102,3 +102,17 @@ let Person = function (name){
 Invoking error constructor with `new` is the same as without `new`
 always pefer throwing literal object rather than objects created with Error()
  
+## Functions
+### Returning Functions
+Can provide some inner scope to the function:
+```node
+let setup = function(){
+ let count = 0;
+ return function() { return count +=1 }
+
+}
+
+let next = setup();
+next()//1
+next()//2
+```
